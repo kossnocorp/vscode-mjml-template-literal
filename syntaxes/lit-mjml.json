@@ -3,21 +3,17 @@
   "injectionSelector": "L:source -comment -string",
   "patterns": [
     {
-      "name": "taggedTemplates",
-      "contentName": "meta.embedded.block.sql",
-      "begin": "sql((`))",
+      "contentName": "meta.embedded.block.mjml",
+      "begin": "(mjml)(`)",
       "beginCaptures": {
         "1": {
           "name": "entity.name.function.tagged-template.js"
         },
         "2": {
-          "name": "string.js"
-        },
-        "3": {
           "name": "punctuation.definition.string.template.begin.js"
         }
       },
-      "end": "(`)",
+      "end": "\\s*(`)",
       "endCaptures": {
         "0": {
           "name": "string.js"
@@ -31,10 +27,10 @@
           "include": "source.ts#template-substitution-element"
         },
         {
-          "include": "source.sql"
+          "include": "text.mjml.basic"
         }
       ]
     }
   ],
-  "scopeName": "inline.lit-sql"
+  "scopeName": "inline.mjml-template"
 }

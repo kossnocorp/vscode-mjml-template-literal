@@ -1,1 +1,12 @@
-const query = sql`SELECT * FROM users`;
+const template = mjml`
+<mjml>
+  <mj-body>
+    <mj-container>
+      <mj-section>
+        <mj-column>
+          <mj-text>Hello World!</mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>`;

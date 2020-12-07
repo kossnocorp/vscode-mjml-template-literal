@@ -1,18 +1,26 @@
-# vscode-sql-template-literal
+# vscode-mjml-template-literal
 
-Syntax highlighting for code like:
+Syntax highlighting for MJML string literals (recommended to use with [tag-mjml](https://github.com/tinovyatkin/tag-mjml)):
 
 ```js
-const query = sql`SELECT * FROM users`;
+import tagMJML from "tag-mjml";
+
+const mjml = tagMJML({
+  /* MJML options */
+});
+
+const template = mjml`
+<mjml>
+  <mj-body>
+    <mj-container>
+      <mj-section>
+        <mj-column>
+          <mj-text>Hello World!</mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>`;
 ```
 
-## Publishing
-
-May require token, stored in last pass. Go to
-https://forbeslindesay.visualstudio.com/_details/security/tokens if token needs
-regenerating.
-
-```
-npm install -g vsce
-vsce publish
-```
+Based on [vscode-sql-template-literal](https://github.com/ForbesLindesay/vscode-sql-template-literal).
